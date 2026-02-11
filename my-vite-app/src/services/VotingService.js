@@ -151,7 +151,7 @@ class VotingSystemService {
    */
   async getAllCandidates(electionId) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
@@ -180,7 +180,7 @@ class VotingSystemService {
    */
   async getCandidate(electionId, candidateId) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(process.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(this.provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
@@ -227,7 +227,7 @@ class VotingSystemService {
    */
   async getVoter(electionId, voterAddress) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(process.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(this.provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
@@ -258,7 +258,7 @@ class VotingSystemService {
    */
   async getResults(electionId) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(process.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(this.provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
@@ -287,7 +287,7 @@ class VotingSystemService {
    */
   async getWinner(electionId) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(process.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(this.provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
@@ -350,7 +350,7 @@ class VotingSystemService {
    */
   async getRegisteredVotersCount(electionId) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(process.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(this.provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
@@ -373,7 +373,7 @@ class VotingSystemService {
    */
   async getCandidatesCount(electionId) {
     if (!this.contract) {
-      const provider = new ethers.JsonRpcProvider(process.env.VITE_RPC_URL);
+      const provider = new ethers.JsonRpcProvider(this.provider.env.VITE_RPC_URL);
       const readOnlyContract = new ethers.Contract(
         VOTING_SYSTEM_ADDRESS,
         votingSystemABI,
