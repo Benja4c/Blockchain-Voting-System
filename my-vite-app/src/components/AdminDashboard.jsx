@@ -39,7 +39,7 @@ export default function AdminDashboard() {
   return (
     <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg shadow-lg p-6 border-2 border-yellow-400">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">⚙️ Admin Dashboard</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Admin Dashboard</h2>
         <p className="text-sm text-gray-600">Manage elections, candidates, and voters</p>
       </div>
 
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
         {/* Create Election */}
         
         <div className="bg-white rounded-lg p-5 border-l-4 border-blue-500">
-          <h3 className="font-bold text-lg mb-4 text-gray-800">📋 Create Election</h3>
+          <h3 className="font-bold text-lg mb-4 text-gray-800">Create Election</h3>
           <input
             className="w-full mb-3 p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
             placeholder="Election name"
@@ -74,13 +74,13 @@ export default function AdminDashboard() {
             disabled={creating}
             className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white py-2 px-4 rounded font-semibold transition"
           >
-            {creating ? '⏳ Creating...' : '✨ Create Election'}
+            {creating ? 'Creating...' : 'Create Election'}
           </button>
         </div>
 
         {/* Finalize Election */}
         <div className="bg-white rounded-lg p-5 border-l-4 border-red-500">
-          <h3 className="font-bold text-lg mb-4 text-gray-800">🏁 Finalize Election</h3>
+          <h3 className="font-bold text-lg mb-4 text-gray-800">Finalize Election</h3>
           <p className="text-sm text-gray-600 mb-3">Once finalized, no more votes can be cast</p>
           <div className="flex gap-2">
             <input
@@ -95,7 +95,7 @@ export default function AdminDashboard() {
               onClick={handleFinalize}
               className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded font-semibold transition whitespace-nowrap"
             >
-              🔒 Finalize
+              Finalize
             </button>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
 
       {/* Registration Components */}
       <div className="border-t border-gray-300 pt-6">
-        <h3 className="font-bold text-lg mb-4 text-gray-800">👥 Voter & Candidate Management</h3>
+        <h3 className="font-bold text-lg mb-4 text-gray-800">Voter & Candidate Management</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <CandidateRegistration />
           <VoterRegistration />

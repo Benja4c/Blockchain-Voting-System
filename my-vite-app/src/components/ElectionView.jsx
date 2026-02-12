@@ -60,7 +60,7 @@ export default function ElectionView() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full border-2 border-indigo-200">
           <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">
-            🗳️ Blockchain Voting System
+            Blockchain Voting System
           </h1>
           <p className="text-gray-500 text-center text-sm mb-6">
             Decentralized Elections on Ethereum
@@ -75,15 +75,16 @@ export default function ElectionView() {
           >
             {loading ? (
               <>
-                <span className="animate-spin">⏳</span> Connecting...
+                <span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2"></span>
+                Connecting...
               </>
             ) : (
-              <>🔐 Connect MetaMask</>
+              <>Connect MetaMask</>
             )}
           </button>
           {error && (
             <div className="mt-4 bg-red-50 border-l-4 border-red-500 p-4 rounded">
-              <p className="text-red-700 text-sm font-semibold">⚠️ Connection Error</p>
+              <p className="text-red-700 text-sm font-semibold">Connection Error</p>
               <p className="text-red-600 text-sm mt-1 break-words">{error}</p>
             </div>
           )}
@@ -100,7 +101,7 @@ export default function ElectionView() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-800">
-                🗳️ Blockchain Voting System
+                Blockchain Voting System
               </h1>
               <p className="text-sm text-gray-500 mt-1">Decentralized Elections on Ethereum</p>
             </div>
@@ -113,7 +114,7 @@ export default function ElectionView() {
                     : 'bg-yellow-400 hover:bg-yellow-500 text-white'
                 }`}
               >
-                {showAdmin ? '👤 Close Admin' : '⚙️ Admin'}
+                {showAdmin ? 'Close Admin' : 'Admin Panel'}
               </button>
               
               <div className="border-l border-gray-300 pl-4">
@@ -168,7 +169,7 @@ export default function ElectionView() {
                 <div className="flex justify-between">
                   <span className="font-semibold">Status:</span>
                   <span className={`font-bold ${election.isActive ? 'text-green-600' : 'text-red-600'}`}>
-                    {election.isActive ? '🟢 Active' : '🔴 Inactive'}
+                    {election.isActive ? 'Active' : 'Inactive'}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -190,13 +191,13 @@ export default function ElectionView() {
                   <div className="flex justify-between">
                     <span className="font-semibold">Registered:</span>
                     <span className={`font-bold ${voterInfo.isRegistered ? 'text-green-600' : 'text-red-600'}`}>
-                      {voterInfo.isRegistered ? '✅ Yes' : '❌ No'}
+                      {voterInfo.isRegistered ? 'Yes' : 'No'}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="font-semibold">Has Voted:</span>
                     <span className={`font-bold ${voterInfo.hasVoted ? 'text-red-600' : 'text-green-600'}`}>
-                      {voterInfo.hasVoted ? '✅ Yes' : '❌ No'}
+                      {voterInfo.hasVoted ? 'Yes' : 'No'}
                     </span>
                   </div>
                   {voterInfo.hasVoted && (
@@ -217,7 +218,7 @@ export default function ElectionView() {
         {candidates.length > 0 && !voterInfo?.hasVoted && (
           <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              🗳️ Cast Your Vote
+              Cast Your Vote
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {candidates.map((candidate) => (
@@ -237,7 +238,7 @@ export default function ElectionView() {
                     Votes: <span className="font-mono font-bold text-indigo-600">{candidate.voteCount}</span>
                   </p>
                   {selectedCandidate === candidate.id && (
-                    <p className="text-sm text-indigo-600 font-semibold mt-2">✓ Selected</p>
+                    <p className="text-sm text-indigo-600 font-semibold mt-2">Selected</p>
                   )}
                 </div>
               ))}
@@ -249,10 +250,11 @@ export default function ElectionView() {
             >
               {loading ? (
                 <>
-                  <span className="animate-spin">⏳</span> Voting...
+                  <span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2"></span>
+                  Voting...
                 </>
               ) : (
-                <>✅ Cast Vote</>
+                <>Cast Vote</>
               )}
             </button>
           </div>
@@ -262,7 +264,7 @@ export default function ElectionView() {
         {candidates.length > 0 && (
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              📊 Live Results
+              Live Results
             </h2>
             {election?.totalVotes === '0' ? (
               <p className="text-center text-gray-500 py-8">No votes cast yet</p>
@@ -314,7 +316,7 @@ export default function ElectionView() {
 
         {error && (
           <div className="mt-6 bg-red-50 border-l-4 border-red-500 px-4 py-3 rounded-lg">
-            <p className="font-bold text-red-700">⚠️ Error:</p>
+            <p className="font-bold text-red-700">Error:</p>
             <p className="text-red-600 text-sm mt-1 break-words">{error}</p>
           </div>
         )}
